@@ -1,0 +1,221 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  height: 50%;
+  width: 40%;
+  margin: auto;
+}
+
+.nav-bar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  padding: 20px;
+  color: #fff;
+  background-color: #5a0017;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 3;
+}
+
+ul {
+  flex: 1;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar-items li {
+  flex: 1;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: medium;
+}
+
+.hero {
+  height: 89.5vh;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  animation: bg-slide 1.5s 0.1s cubic-bezier(0, 0.5, 0, 1) forwards;
+  content: "";
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)),
+    url(images/pewdiepie-red-and-black-wavy-background-uhd-4k-wallpaper.jpg)
+      no-repeat bottom;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 1;
+}
+
+.hero::after {
+  animation: slide-up 1s 0.2s cubic-bezier(0, 0.5, 0, 1) forwards;
+  content: "";
+  height: 45vh;
+  width: 100%;
+  position: absolute;
+  top: 65%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #de0139;
+  clip-path: polygon(0% 80%, 100% 30%, 100% 100%, 0% 100%);
+  opacity: 1;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.animate-pop-out {
+  animation: pop-out 1s 2s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
+  opacity: 0;
+}
+
+.hero-title {
+  color: #fff;
+  font-size: 50px;
+  margin: auto;
+  animation-delay: 0.6s;
+}
+
+.hero-para {
+  color: #fff;
+  margin: 40px 0 13px 0;
+  animation-delay: 0.8s;
+}
+
+.btn {
+  color: #fff;
+  margin: auto;
+  border: none;
+  padding: 20px 50px;
+  background-color: #3d000f;
+  border-radius: 10px;
+  cursor: pointer;
+  animation-delay: 1s;
+}
+
+.btn:focus {
+  border: none;
+  outline: none;
+}
+
+.overflow {
+  z-index: 10;
+  padding: 80px 0;
+  transform: translateZ(0);
+  background-color: #fff;
+  margin-top: 11vh;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.intro-txt {
+  flex: 1;
+  line-height: 1;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: 1s all ease-out;
+}
+
+.intro-txt-appear {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.intro-txt p {
+  margin: 50px auto 0;
+  width: 400px;
+}
+
+.intro-img {
+  flex: 1;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: 1s all ease-out;
+}
+
+.intro-img-appear {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.intro-img img {
+  height: 300px;
+  width: 400px;
+}
+
+.rick-roll {
+  text-align: center;
+  margin: 60px 0 0;
+}
+
+.rick-roll h1 {
+  padding: 30px;
+}
+
+.rick-roll video {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.footer {
+  margin: 70px 0 0;
+  padding: 30px 0 30px;
+  text-align: center;
+  background-color: #de0139;
+  font-size: 14px;
+}
+
+@keyframes bg-slide {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pop-out {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem) scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slide-up {
+  100% {
+    transform: translateY(-20px);
+  }
+}
